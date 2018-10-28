@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+  background-color: #fdfdff;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-appbar {
+  text-align: center;
+  background-color: #3e3ed4;
+  align-items: center
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-listcontainer {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+  list-style-position: inside; 
+}
+
+li {
+  list-style: none;
+}
+
+li::after {
+  content: ' ';
+  white-space: normal;
+  word-spacing: 1em; /* = nav@padding-right - this actually makes width */
+  background-image: radial-gradient(circle, black, black 7%, transparent 15%, transparent 35%, black 45%, black 48%, transparent 55%);
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.5;
+}
+
+.ListItem-background {
+  background-color: #e0e3e9;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.row {
+  display: flex;
+}
+
+.ListItem-main-column {
+  flex: 80%;
+}
+
+.ListItem-info-column {
+  flex: 20%;
+}
+
+.play-button {
+
+  background-color: #3e3ed4;
+  color: #fdfdff
+}
