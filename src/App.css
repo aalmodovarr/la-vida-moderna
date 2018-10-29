@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #fdfdff;
+  background-color: #e2e2e2;
+  height: 100%;
 }
 
 .App-logo {
@@ -47,6 +48,7 @@
 
 li {
   list-style: none;
+  padding-bottom: 10px;
 }
 
 li::after {
@@ -61,10 +63,10 @@ li::after {
 }
 
 .ListItem-background {
-  background-color: #e0e3e9;
+  background-color: #ffffff;
   padding-left: 10px;
-  padding-bottom: 10px;
   display: flex;
+  height: 100%;
 }
 
 .row {
@@ -77,10 +79,21 @@ li::after {
 
 .ListItem-info-column {
   flex: 20%;
+  padding-left: 10px;
+  height: 100%;
 }
 
 .play-button {
+  /* background-color: #3e3ed4; */
+  color: #3e3ed4;
+  height: 100px;
+  width: 100px;
+}
 
-  background-color: #3e3ed4;
-  color: #fdfdff
+h3.title {
+  color: #000000;
+}
+
+h4.subtitle {
+  color: #6b6b6b;
 }

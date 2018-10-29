@@ -9,7 +9,11 @@ import ListItem from './ListItem';
 class App extends Component {
   constructor() {
     super()
-    this.state = { feed: [] }
+    this.state = {
+      feed: [],
+      loading: true,
+      error: false
+    }
   }
 
   componentDidMount() {
@@ -22,15 +26,36 @@ class App extends Component {
 
     parser.parseURL(CORS_PROXY + 'http://fapi-top.prisasd.com/podcast/playser/oh_my_lol/itunestfp/podcast.xml',
       (err, data) => {
-        console.log(data);
+        // console.log(data);
         let items = [];
-        items = data.items.filter(entry => entry.title.startsWith("La Vida Moderna"));
-        this.setState({ feed: items })
+        if (data != null) {
+          items = data.items.filter(entry => entry.title.startsWith("La Vida Moderna"));
+        }
+        this.setState({ feed: items, loading: false, error: data == null })
       }
     )
   }
 
   render() {
+
+    let content;
+
+    if (this.state.loading) {
+      content = <h4>Cargando...</h4>
+    } else if (this.state.error) {
+      content = <h4>Inténtelo de nuevo más tarde</h4>
+    } else {
+      content = <ul className="App-listcontainer">
+        {this.state.feed.map(entry =>
+          <ListItem key={entry.pubDate}
+            name={entry.title}
+            description={entry.content}
+            pubDate={entry.pubDate}
+            link={entry.guid}
+          />)}
+      </ul>;
+    }
+
     return (
       <React.Fragment>
         <CssBaseline />
@@ -40,20 +65,12 @@ class App extends Component {
               <Typography variant="h6" color="inherit">
                 La vida moderna | Oh! My LOL
               </Typography>
-              <img src="https://recursosweb.prisaradio.com/fotos/original/010002267730.png"
+              <img src="./lvm-oml.png"
                 height='50px' width='50px' />
             </Toolbar>
           </AppBar>
 
-          <ul className="App-listcontainer">
-            {this.state.feed.map(entry =>
-              <ListItem key={entry.pubDate}
-                name={entry.title}
-                description={entry.content}
-                pubDate={entry.pubDate}
-                link={entry.guid}
-              />)}
-          </ul>
+          {content}
 
         </div >}
       </React.Fragment>
