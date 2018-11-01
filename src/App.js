@@ -45,7 +45,7 @@ class App extends Component {
         {<div className="App">
           <AppBar className="App-appbar" position="sticky" style={{ backgroundColor: "#ff1143" }}>
             <Toolbar color="#ff1143">
-              <Typography variant="title" color="inherit">
+              <Typography variant="h6" color="inherit">
                 La vida moderna | Oh! My LOL
               </Typography>
               <img src="./lvm-oml.png"
@@ -63,7 +63,10 @@ class App extends Component {
 
   getContent() {
     if (this.state.loading) {
-      return <div style={{ paddingTop: "20px" }}><CircularProgress /> <h4>Hola, soy Vicente del Bosque</h4></div>;
+      return <div style={{ paddingTop: "20px" }}>
+        <CircularProgress />
+        <h4>Hola, soy Vicente del Bosque</h4>
+      </div>;
     }
     else if (this.state.error) {
       return <h4>¿Pero qué ha pachao?</h4>;
