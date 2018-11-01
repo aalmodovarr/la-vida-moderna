@@ -11,8 +11,8 @@
 
 .App-appbar {
   text-align: center;
-  background-color: #3e3ed4;
-  align-items: center
+  background-color: #ff1143;
+  align-items: center;
 }
 
 .App-header {
@@ -86,7 +86,7 @@ li::after {
 
 .play-button {
   /* background-color: #3e3ed4; */
-  color: #3e3ed4;
+  color: #ff1143;
   height: 100px;
   width: 100px;
 }

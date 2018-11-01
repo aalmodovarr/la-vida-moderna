@@ -5,7 +5,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ListItem from './ListItem';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 class App extends Component {
   constructor() {
@@ -42,9 +41,9 @@ class App extends Component {
       <React.Fragment>
         <CssBaseline />
         {<div className="App">
-          <AppBar className="App-appbar" position="static">
-            <Toolbar>
-              <Typography variant="h6" color="inherit">
+          <AppBar className="App-appbar" position="static" style={{ backgroundColor: "#ff1143" }}>
+            <Toolbar color="#ff1143">
+              <Typography variant="title" color="inherit">
                 La vida moderna | Oh! My LOL
               </Typography>
               <img src="./lvm-oml.png"
