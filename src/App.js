@@ -5,6 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ListItem from './ListItem';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class App extends Component {
   constructor() {
@@ -61,10 +63,10 @@ class App extends Component {
 
   getContent() {
     if (this.state.loading) {
-      return <h4>Cargando...</h4>;
+      return <div style={{ paddingTop: "20px" }}><CircularProgress /> <h4>Hola, soy Vicente del Bosque</h4></div>;
     }
     else if (this.state.error) {
-      return <h4>Inténtelo de nuevo más tarde</h4>;
+      return <h4>¿Pero qué ha pachao?</h4>;
     }
     else {
       return <ul className="App-listcontainer">
