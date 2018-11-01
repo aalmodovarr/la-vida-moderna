@@ -41,7 +41,7 @@ class App extends Component {
       <React.Fragment>
         <CssBaseline />
         {<div className="App">
-          <AppBar className="App-appbar" position="static" style={{ backgroundColor: "#ff1143" }}>
+          <AppBar className="App-appbar" position="sticky" style={{ backgroundColor: "#ff1143" }}>
             <Toolbar color="#ff1143">
               <Typography variant="title" color="inherit">
                 La vida moderna | Oh! My LOL
