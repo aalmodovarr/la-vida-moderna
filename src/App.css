@@ -80,7 +80,8 @@ li::after {
 .ListItem-info-column {
   flex: 20%;
   padding-left: 10px;
-  height: 100%;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 .play-button {

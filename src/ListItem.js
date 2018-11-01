@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import IconButton from '@material-ui/core/IconButton';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import Button from '@material-ui/core/Button';
 
 class ListItem extends Component {
     constructor(props) {
@@ -27,12 +27,11 @@ class ListItem extends Component {
                     </div>
                     <div className="ListItem-info-column">
                         <h6>{pubDate}</h6>
-                        <IconButton aria-label="Play/pause">
+                        <Button variant="fab" mini="true" >
                             <PlayArrowIcon
                                 className="play-button"
                                 onClick={() => this.play(this.props.link)} />
-                        </IconButton>
-                        {/* <button className="play-button" onClick={() => this.play(this.props.link)}> Play </button> */}
+                        </Button>
                     </div>
                 </div>
             </li >

@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ListItem from './ListItem';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class App extends Component {
   constructor() {
@@ -37,25 +38,6 @@ class App extends Component {
   }
 
   render() {
-
-    let content;
-
-    if (this.state.loading) {
-      content = <h4>Cargando...</h4>
-    } else if (this.state.error) {
-      content = <h4>Inténtelo de nuevo más tarde</h4>
-    } else {
-      content = <ul className="App-listcontainer">
-        {this.state.feed.map(entry =>
-          <ListItem key={entry.pubDate}
-            name={entry.title}
-            description={entry.content}
-            pubDate={entry.pubDate}
-            link={entry.guid}
-          />)}
-      </ul>;
-    }
-
     return (
       <React.Fragment>
         <CssBaseline />
@@ -70,12 +52,26 @@ class App extends Component {
             </Toolbar>
           </AppBar>
 
-          {content}
+          {this.getContent()}
 
         </div >}
       </React.Fragment>
 
     );
+  }
+
+  getContent() {
+    if (this.state.loading) {
+      return <h4>Cargando...</h4>;
+    }
+    else if (this.state.error) {
+      return <h4>Inténtelo de nuevo más tarde</h4>;
+    }
+    else {
+      return <ul className="App-listcontainer">
+        {this.state.feed.map(entry => <ListItem key={entry.pubDate} name={entry.title} description={entry.content} pubDate={entry.pubDate} link={entry.guid} />)}
+      </ul>;
+    }
   }
 }
 
