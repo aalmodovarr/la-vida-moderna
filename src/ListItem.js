@@ -23,7 +23,7 @@ class ListItem extends Component {
         return (
             <li >
                 <Card >
-                    <CardContent style={{ padding: "10px" }} >
+                    <CardContent style={{ padding: "5px" }} >
                         <div className="ListItem-background">
                             <div className="ListItem-main-column">
                                 <h3 className="title">{this.props.description}</h3>
