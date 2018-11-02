@@ -64,7 +64,7 @@ class App extends Component {
   getContent() {
     if (this.state.loading) {
       return <div style={{ paddingTop: "20px" }}>
-        <CircularProgress />
+        <CircularProgress style={{ color: "#000000" }} />
         <h4>Hola, soy Vicente del Bosque</h4>
       </div>;
     }
