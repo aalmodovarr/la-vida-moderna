@@ -25,9 +25,9 @@ class ListItem extends Component {
                         <h3 className="title">{this.props.description}</h3>
                         <h4 className="subtitle">{this.props.name}</h4>
                     </div>
-                    <div className="ListItem-info-column">
+                    <div className="ListItem-info-column" style={{ position: "relative" }}>
                         <h6>{pubDate}</h6>
-                        <Button variant="fab" mini="true" >
+                        <Button variant="fab" mini="true" style={{ position: "absolute", bottom: "10px", right: "10px" }}>
                             <PlayArrowIcon
                                 className="play-button"
                                 onClick={() => this.play(this.props.link)} />
