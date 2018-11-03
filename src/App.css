@@ -2,6 +2,14 @@
   text-align: center;
   background-color: #e2e2e2;
   height: 100%;
+  width: 100%
+}
+
+@media screen and (min-width: 1000px) {
+  .App {
+    width: 50%;
+    margin: auto;
+  }
 }
 
 .App-logo {
