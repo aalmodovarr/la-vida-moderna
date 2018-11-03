@@ -17,28 +17,26 @@ class ListItem extends Component {
         const pubDate = moment(this.props.pubDate).fromNow();
 
         return (
-            <li >
-                <Card >
-                    <CardContent style={{ padding: "5px" }} >
-                        <div className="ListItem-background">
-                            <div className="ListItem-main-column">
-                                <h3 className="title">{this.props.description}</h3>
-                                <h4 className="subtitle">{this.props.name}</h4>
-                            </div>
-                            <div className="ListItem-info-column"
-                                style={{ position: "relative" }}>
-                                <h6 style={{ position: "absolute", top: "0", right: "10px" }}>{pubDate}</h6>
-                                <Button variant="fab" mini="true"
-                                    style={{ position: "absolute", bottom: "10px", right: "10px" }}>
-                                    <PlayArrowIcon
-                                        className="play-button"
-                                        onClick={() => { this.props.onPlay(this.props.link) }} />
-                                </Button>
-                            </div>
+            <Card style={{ marginBottom: "10px" }}>
+                <CardContent style={{ padding: "5px" }} >
+                    <div className="ListItem-background">
+                        <div className="ListItem-main-column">
+                            <h3 className="title">{this.props.description}</h3>
+                            <h4 className="subtitle">{this.props.name}</h4>
                         </div>
-                    </CardContent>
-                </Card>
-            </li >
+                        <div className="ListItem-info-column"
+                            style={{ position: "relative" }}>
+                            <h6 style={{ position: "absolute", top: "0", right: "10px" }}>{pubDate}</h6>
+                            <Button variant="fab" mini="true"
+                                style={{ position: "absolute", bottom: "10px", right: "10px" }}>
+                                <PlayArrowIcon
+                                    className="play-button"
+                                    onClick={() => { this.props.onPlay(this.props.link) }} />
+                            </Button>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card >
         );
     }
 }
