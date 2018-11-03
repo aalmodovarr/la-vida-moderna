@@ -10,10 +10,6 @@ class ListItem extends Component {
         this.state = {}
     }
 
-    play(link) {
-        window.open(link, "_parent");
-    }
-
     render() {
         var moment = require('moment');
         moment().format();
@@ -29,12 +25,14 @@ class ListItem extends Component {
                                 <h3 className="title">{this.props.description}</h3>
                                 <h4 className="subtitle">{this.props.name}</h4>
                             </div>
-                            <div className="ListItem-info-column" style={{ position: "relative" }}>
+                            <div className="ListItem-info-column"
+                                style={{ position: "relative" }}>
                                 <h6 style={{ position: "absolute", top: "0", right: "10px" }}>{pubDate}</h6>
-                                <Button variant="fab" mini="true" style={{ position: "absolute", bottom: "10px", right: "10px" }}>
+                                <Button variant="fab" mini="true"
+                                    style={{ position: "absolute", bottom: "10px", right: "10px" }}>
                                     <PlayArrowIcon
                                         className="play-button"
-                                        onClick={() => this.play(this.props.link)} />
+                                        onClick={() => { this.props.onPlay(this.props.link) }} />
                                 </Button>
                             </div>
                         </div>

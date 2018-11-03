@@ -5,7 +5,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ListItem from './ListItem';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 class App extends Component {
@@ -38,6 +37,10 @@ class App extends Component {
     )
   }
 
+  play(link) {
+    window.open(link, "_parent");
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -48,7 +51,7 @@ class App extends Component {
               <Typography variant="h6" color="inherit">
                 La vida moderna | Oh! My LOL
               </Typography>
-              <img src="./lvm-oml.png"
+              <img src="./lvm-oml.png" alt="logo"
                 height='50px' width='50px' />
             </Toolbar>
           </AppBar>
@@ -73,7 +76,15 @@ class App extends Component {
     }
     else {
       return <ul className="App-listcontainer">
-        {this.state.feed.map(entry => <ListItem key={entry.pubDate} name={entry.title} description={entry.content} pubDate={entry.pubDate} link={entry.guid} />)}
+        {this.state.feed.map(entry =>
+          <ListItem key={entry.pubDate}
+            name={entry.title}
+            description={entry.content}
+            pubDate={entry.pubDate}
+            link={entry.guid}
+            onPlay={this.play}
+          />
+        )}
       </ul>;
     }
   }
